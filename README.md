@@ -59,87 +59,11 @@ Install [Custom Version](https://github.com/jonssonyan/h-ui/releases)
 bash <(curl -fsSL https://raw.githubusercontent.com/jonssonyan/h-ui/main/install.sh) v0.0.1
 ```
 
-### systemd
-
-Executable files: https://github.com/jonssonyan/h-ui/releases
-
-```bash
-mkdir -p /usr/local/h-ui/
-curl -fsSL https://github.com/jonssonyan/h-ui/releases/latest/download/h-ui-linux-amd64 -o /usr/local/h-ui/h-ui && chmod +x /usr/local/h-ui/h-ui
-curl -fsSL https://raw.githubusercontent.com/jonssonyan/h-ui/main/h-ui.service -o /etc/systemd/system/h-ui.service
-# Custom web port, default is 8081
-# sed -i "s|^ExecStart=.*|ExecStart=/usr/local/h-ui/h-ui -p 8081|" "/etc/systemd/system/h-ui.service"
-systemctl daemon-reload
-systemctl enable h-ui
-systemctl restart h-ui
-```
-
 Uninstall
 
 ```bash
 systemctl stop h-ui
 rm -rf /etc/systemd/system/h-ui.service /usr/local/h-ui/
-```
-
-### Docker
-
-1. Install Docker
-
-   https://docs.docker.com/engine/install/
-
-   ```bash
-   bash <(curl -fsSL https://get.docker.com)
-   ```
-
-2. Start a container
-
-   ```bash
-   docker pull jonssonyan/h-ui
-
-   docker run -d --cap-add=NET_ADMIN \
-     --name h-ui --restart always \
-     --network=host \
-     -v /h-ui/bin:/h-ui/bin \
-     -v /h-ui/data:/h-ui/data \
-     -v /h-ui/export:/h-ui/export \
-     -v /h-ui/logs:/h-ui/logs \
-     jonssonyan/h-ui
-   ```
-
-   Custom web port, default is 8081
-
-   ```bash
-   docker run -d --cap-add=NET_ADMIN \
-     --name h-ui --restart always \
-     --network=host \
-     -v /h-ui/bin:/h-ui/bin \
-     -v /h-ui/data:/h-ui/data \
-     -v /h-ui/export:/h-ui/export \
-     -v /h-ui/logs:/h-ui/logs \
-     jonssonyan/h-ui \
-     ./h-ui -p 8081
-   ```
-
-   Set the time zone, default is Asia/Shanghai
-
-   ```bash
-   docker run -d --cap-add=NET_ADMIN \
-     --name h-ui --restart always \
-     --network=host \
-     -e TZ=Asia/Shanghai \
-     -v /h-ui/bin:/h-ui/bin \
-     -v /h-ui/data:/h-ui/data \
-     -v /h-ui/export:/h-ui/export \
-     -v /h-ui/logs:/h-ui/logs \
-     jonssonyan/h-ui
-   ```
-
-Uninstall
-
-```bash
-docker rm -f h-ui
-docker rmi jonssonyan/h-ui
-rm -rf /h-ui
 ```
 
 ## Default Installation Information
