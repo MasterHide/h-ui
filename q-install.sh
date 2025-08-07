@@ -17,9 +17,9 @@ ssl_installed=false
 display_banner() {
     echo -e "${CYAN}"
     echo "╔══════════════════════════════════════════════════════════════════╗"
-    echo "                                                                    
-    echo -e "                ${YELLOW}H-UI SERUP MENU - 01${CYAN}            
-    echo "                                                                  
+    echo "                                                                    "
+    echo -e "                ${YELLOW}H-UI SERUP MENU - 01${CYAN}                "
+    echo "                                                                    "
     echo "╚══════════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
