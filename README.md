@@ -50,7 +50,7 @@ Memory: ≥ 256MB
 Install Latest Version
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/MasterHide/h-ui/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/MasterHide/h-ui/main/q-install.sh)
 ```
 
 Install [Custom Version](https://github.com/jonssonyan/h-ui/releases)
