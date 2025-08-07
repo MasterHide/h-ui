@@ -16,11 +16,11 @@ ssl_installed=false
 # Function to display the banner
 display_banner() {
     echo -e "${CYAN}"
-    echo "╔══════════════════════════════════════════════════════════════════════════════╗"
+    echo "╔════════════════════════════════════════════════════════════════════════════╗"
     echo "║                                                                              ║"
-    echo "║                    ${WHITE}H${CYAN}-${WHITE}U${CYAN}-${WHITE}I${CYAN} ${WHITE}INSTALL${CYAN} ${WHITE}MENU${CYAN}                    ║"
+    echo -e "║                 ${YELLOW}H-UI SERUP MENU - 01${CYAN}                                     ║"
     echo "║                                                                              ║"
-    echo "╚══════════════════════════════════════════════════════════════════════════════╝"
+    echo "╚════════════════════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
 
